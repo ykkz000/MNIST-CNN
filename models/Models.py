@@ -22,7 +22,7 @@ class EBasicBlock(nn.Module):
         y = func.elu(self.bn1(self.conv1(x)))
         y = self.bn2(self.conv2(y))
         y += self.shortcut(x)
-        y = func.gelu(y)
+        y = func.elu(y)
         return y
 
 
