@@ -8,6 +8,12 @@ def get_model(model_name, channels, labels):
         return models.SmallerResNet(channels, labels)
     elif model_name == 'EluResNet':
         return models.EluResNet(channels, labels)
+    elif model_name == 'GeluResNet':
+        return models.GeluResNet(channels, labels)
+    elif model_name == 'AdaptiveResNet':
+        return models.AdaptiveResNet(channels, labels)
+    elif model_name == 'RationalResNet':
+        return  models.RationalResNet(channels, labels)
     elif model_name == 'ResNet18':
         return models.resnet.ResNet18(channels, labels)
     elif model_name == 'ResNet34':

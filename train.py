@@ -97,7 +97,7 @@ def train(model, config: models.ModelConfig, device, train_data, val_data):
         ax2.plot(epochs, val_accs, color='blue', label='val_acc')
         ax2.grid(True, linestyle='--', color='gray', alpha=0.3)
         plt.pause(0.1)
-        if val_acc_epoch >= best_acc:
+        if val_acc_epoch > best_acc: # choose the earlier one
             best_acc = val_acc_epoch
             best_epoch = epoch
             torch.save(model, 'checkpoints/{}_best.pth'.format(config.model_name))
@@ -126,5 +126,5 @@ if __name__ == '__main__':
         transforms.ToTensor()
     ])
     train_val_data = datasets.FashionMNIST('dataset', train=True, transform=trans, download=True)
-    train_data, val_data = torch.utils.data.random_split(train_val_data, [55000, 5000])
+    train_data, val_data = torch.utils.data.random_split(train_val_data, [59000, 1000])
     train(model, config, device, train_data, val_data)

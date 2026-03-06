@@ -1,0 +1,10 @@
+{
+  "model_name": "AdaptiveResNet",
+  "epochs":50,
+  "batch_size":64,
+  "learning_rate":0.000001,
+  "weight_decay": 0.01,
+  "step": 1,
+  "gamma": 0.90,
+  "seed": 3407
+}
